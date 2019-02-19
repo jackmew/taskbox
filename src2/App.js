@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
-import Taskbox from './screens/Taskbox';
+import store from './lib/redux';
 
-export const store = configureStore();
+import InboxScreen from './components/InboxScreen';
 
 class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Taskbox />
+                <InboxScreen />
             </Provider>
         );
     }

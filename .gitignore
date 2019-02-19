@@ -8,6 +8,8 @@
 /.idea
 .idea
 
+/storybook-static
+
 # testing
 /coverage
 

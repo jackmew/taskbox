@@ -3,9 +3,6 @@ import actions, { archiveTask, pinTask } from './actions';
 
 
 export function mapStateToProps(state, props) {
-    console.log('mapStateToProps')
-    console.log(state)
-    console.log(state.tasks)
     return {
         tasks: state.tasks.filter(t => t.state === actions.inboxTask || t.state === actions.pinTask)
     }

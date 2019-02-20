@@ -7,7 +7,6 @@ import Task from './Task';
 export default class Taskbox extends React.PureComponent {
 
     render() {
-        console.log(this.props);
         const {
             props: {
                 tasks,

@@ -5,13 +5,11 @@ const actionTypes = {
 };
 
 export const archiveTask = id => {
-    console.log(`archiveTask: ${id}`);
     return {
         type: actionTypes.archiveTask, id
     }
 }
 export const pinTask = id => {
-    console.log(`pinTask: ${id}`);
     return {
         type: actionTypes.pinTask, id
     }

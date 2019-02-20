@@ -1,7 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 
-export default class Counter extends React.PureComponent {
+type Props = {
+    count: number,
+    decrement: Function,
+    increment: Function
+}
+
+export default class Counter extends React.PureComponent<Props> {
     render() {
         return (
             <div>

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import actionTypes from './actions';
+import actionTypes, { increment, decrement } from './actions';
 
 export function mapStateToProps(state, props) {
     return {
@@ -7,10 +7,14 @@ export function mapStateToProps(state, props) {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        increment: () => dispatch({ type: actionTypes.increment }),
-        decrement: () => dispatch({ type: actionTypes.decrement })
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         increment: () => dispatch({ type: actionTypes.increment }),
+//         decrement: () => dispatch({ type: actionTypes.decrement })
+//     }
+// }
+const mapDispatchToProps = {
+    increment,
+    decrement
+};
 export default connect(mapStateToProps, mapDispatchToProps)

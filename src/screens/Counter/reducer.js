@@ -1,15 +1,41 @@
 // @flow
-import actionTypes, { type Action } from './actions'
+import actionTypes, { type Action, type Notification } from './actions'
 
-type State = number
+type State = {
+    count: number,
+    notification: Notification
+}
 
-const initialState = 0;
+const initialState = {
+    count: 0,
+    notification: {
+        isShow: false,
+        text: null
+    }
+};
 const count = (state: State = initialState, action: Action) => {
+
     switch (action.type) {
-        case actionTypes.increment:
-            return state + 1;
-        case actionTypes.decrement:
-            return state - 1;
+        case actionTypes.counterIncrement:
+            return {
+                ...state,
+                count: state.count + 1
+            };
+        case actionTypes.counterDecrement:
+            return {
+                ...state,
+                count: state.count - 1
+            };
+        case actionTypes.notificationShow:
+            return {
+                ...state,
+                notification: { ...action.notification }
+            };
+        case actionTypes.notificationHide:
+            return {
+                ...state,
+                notification: { ...action.notification }
+            };
         default:
             return state;
     }

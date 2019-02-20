@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import actionTypes, { increment, decrement } from './actions';
+import actionTypes, { increment, decrement, showNotification, hideNotification } from './actions';
 
 export function mapStateToProps(state, props) {
     return {
-        count: state.count
+        counter: state.counter
     }
 }
 
@@ -15,6 +15,8 @@ export function mapStateToProps(state, props) {
 // }
 const mapDispatchToProps = {
     increment,
-    decrement
+    decrement,
+    showNotification,
+    hideNotification
 };
 export default connect(mapStateToProps, mapDispatchToProps)
